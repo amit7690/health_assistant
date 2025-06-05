@@ -1,0 +1,298 @@
+Light mode
+body {
+  background-color: #d6ddec;
+  color: #121717;
+}
+
+/* Dark mode */
+.dark-mode {
+  background-color: #121717;
+  color: #c9c9c9;
+}
+
+#chat-window {
+  position: relative;
+  height: 500px;
+  overflow: auto;
+}
+
+.message-line {
+  padding-bottom: 8px;
+  width: 70%;
+  word-break: break-word;
+  display: flex;
+}
+
+.message-box {
+  padding: 12px;
+  border-radius: 15px;
+  display: inline-block;
+  position: relative;
+  background-color: #efefef;
+  min-width: 26px;
+  border-top-left-radius: 0;
+  word-wrap: break-word;
+  flex-grow: 0;
+  white-space: pre-wrap;
+  color:#121717
+}
+
+/* .message-line.my-text {
+  flex-direction: row-reverse;
+  width: 100%;
+} */
+
+.message-line.my-text {
+  flex-direction: row-reverse;
+  width: 100%;
+}
+
+
+/* .message-box.my-text {
+  transform: rotateY(180deg);
+  background-color: #e7f9d8;
+} */
+
+.message-box.my-text {
+  background-color: #e7f9d8;
+  margin-top: 20px;
+  /* Removed transform: rotateY(180deg); */
+}
+
+/* .me {
+  transform: scale(-1, 1);
+} */
+
+/* .message-box.my-text.dark {
+  background-color: #0f4c9e;
+} */
+
+.message-box.my-text.dark {
+  background-color: #0f4c9e;
+}
+
+
+
+/* .message-box.dark {
+  background-color: #263443;
+} */
+
+.message-box.dark {
+  background-color: #263443;
+}
+
+/* Input container */
+#message-input {
+  bottom: 0;
+  width: 100%;
+  flex-grow: 1;
+  font-size: 16px;
+  box-sizing: border-box;
+  border: none;
+  padding: 10px 0 10px 12px;
+  border-radius: 40px 0 0 40px;
+  background-color: transparent;
+  height: auto;
+  color: inherit;
+}
+
+#send-button {
+  border: none;
+  font: inherit;
+  background-color: transparent;
+  margin: 0;
+  appearance: none;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+}
+
+#repeat-button {
+  border: none;
+  background-color: transparent;
+  margin: 0 0 2px 0;
+  padding: 0 10px;
+  font-size: 24px;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  width: 100%;
+  border-radius: 40px;
+  border: 1px solid #2d2d2d;
+}
+
+.paper-plane i {
+  display: block;
+  width: 25px;
+  color: #125ee5;
+}
+
+.volume i {
+  display: block;
+  width: 25px;
+  color: #125ee5;
+}
+
+.send i {
+  display: block;
+  width: 25px;
+  color: #125ee5;
+}
+
+
+
+
+.loading-animation {
+  padding-bottom: 8px;
+  display: none; /* Hidden by default */
+  width: 70%;
+  margin: 10px auto; /* Center the animation */
+  text-align: center;
+}
+
+.loading-dots {
+  padding: 12px;
+  border-radius: 15px;
+  position: relative;
+  background-color: #efefef;
+  min-width: 26px;
+  border-top-left-radius: 0;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  width: fit-content;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  margin: 0 2px;
+  border-radius: 50%;
+  animation: bounce 1.5s ease-in-out infinite;
+  background: #5a5a5a;
+}
+
+.dot:nth-of-type(1) {
+  margin-left: 5px;
+  animation-delay: 0s;
+}
+
+.dot:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-of-type(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%,
+  40% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-10px);
+  }
+}
+
+
+.col-12.text-center.d-flex.justify-content-around {
+  padding: 0 300px;
+}
+
+#voice-options {
+  border-radius: 4px; /* Rounded edges */
+}
+
+/* Change color of select on hover */
+#voice-options:hover {
+  background-color: #e9e9e9;
+}
+
+
+/* Styles for user and bot messages */
+.user-message .message-box {
+  background-color: #e7f9d8;
+  text-align: right;
+}
+
+.bot-message .message-box {
+  background-color: #efefef;
+  text-align: left;
+}
+
+.attachment-file-btn{
+  border: none;
+  font: inherit;
+  background-color: transparent;
+  margin: 0;
+  appearance: none;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  color: #0f4c9e;
+}
+.attachment-file-btn:hover{
+  background-color: transparent;
+  color:#0f4c9e;
+}
+
+
+.pdf-preview {
+background-color: #efefef;
+display: flex;
+align-items: center;
+cursor: pointer;
+padding: 10px;
+border-radius: 8px;
+height: auto;
+width: fit-content;
+margin-bottom: 20px;
+}
+
+
+
+.pdf-icon {
+  font-size: 48px;
+  color: #d9534f; /* PDF red color */
+  margin-right: 10px;
+}
+
+.pdf-name {
+  font-size: 16px;
+  color: #333;
+}
+
+
+/* .cancel-float-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 9999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+ */
+
+.cancel-button{
+ display: none;
+ /* position: fixed; */
+ bottom: 20px;
+ right: 20px;
+ background-color: #f44336;
+ color: white;
+ border: none;
+ border-radius: 50%;
+ width: 40px;
+ height: 40px;
+ font-size: 18px;
+ box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+ cursor: pointer;
+ z-index: 9999;
+}

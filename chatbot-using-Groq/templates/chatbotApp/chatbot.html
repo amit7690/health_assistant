@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Chatbot</title>
+</head>
+<body>
+    <h1>Health Chatbot</h1>
+
+    <!-- Form to upload PDF and submit questions -->
+    <form action="#" method="POST" id="chat-form" enctype="multipart/form-data">
+        <label for="pdf-upload">Upload your PDF document:</label>
+        <input type="file" id="pdf-upload" name="pdf" accept=".pdf" required><br>
+
+        <textarea id="query" placeholder="Ask me anything..." required></textarea><br>
+        <button type="submit">Ask</button>
+    </form>
+
+    <h3>Response:</h3>
+    <p id="response"></p>
+
+    <script>
+        const form = document.getElementById('chat-form');
+        const responseElement = document.getElementById('response');
+        let uploadedPdf = null;
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Get the uploaded PDF file
+            const fileInput = document.getElementById('pdf-upload');
+            const query = document.getElementById('query').value;
+
+            const formData = new FormData();
+            formData.append('query', query);
+            formData.append('pdf', fileInput.files[0]);
+
+            const res = await fetch('/api/chatbot/', {
+                method: 'POST',
+                body: formData,
+            });
+
+            const data = await res.json();
+            responseElement.textContent = data.response || data.error;
+        });
+    </script>
+</body>
+</html>
